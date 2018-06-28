@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './model/user.model';
+import { USER_DATA } from './data/mocks';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,11 @@ export class AppComponent {
     this.title = data;
   }
 
-  user: User = {
-    firstName: "Bill",
-    lastName: "Gates",
-    dob: new Date("Dec 21, 1964"),
-    income: 50000,
-    isWorking: true,
-    company: "Microsoft",
-    image: 'assets/images/bill.jpg',
-    vote: 120
+  user: User ;
+  ngOnInit(){
+    this.user = USER_DATA;
   }
+  // constructor(){
+  //   this.user = USER_DATA;
+  // }
 }

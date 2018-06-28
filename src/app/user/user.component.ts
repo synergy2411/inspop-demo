@@ -1,5 +1,15 @@
-import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter,
+    OnInit,
+    OnChanges,
+    AfterContentChecked,
+    AfterContentInit,
+    AfterViewChecked,
+    AfterViewInit,
+    OnDestroy,
+    DoCheck, 
+    SimpleChanges} from '@angular/core';
 import { User } from '../model/user.model';
+import { AppComponent } from '../app.component';
 
 @Component({
     selector : 'app-user',
@@ -8,7 +18,16 @@ import { User } from '../model/user.model';
     styleUrls : ['./user.component.css'],
     encapsulation : ViewEncapsulation.Emulated
 })
-export class UserComponent{
+export class UserComponent implements   
+OnInit,
+OnChanges,
+AfterContentChecked,
+AfterContentInit,
+AfterViewChecked,
+AfterViewInit,
+OnDestroy,
+DoCheck     
+{
 
     @Input('title') title : string;
     @Input('user') user : User;
@@ -21,6 +40,18 @@ export class UserComponent{
     moreInfo(user : User){
         alert(`${user.firstName} is working with ${user.company}!!`);
     }
+    constructor(private app  :AppComponent){
+        console.log("Constructor")}
+    ngOnInit(){console.log("ngOnInit")}
+    ngOnChanges( changes : SimpleChanges){
+        console.log("ngOnChanges");
+        console.log(changes);
+    }
+    ngAfterContentChecked(){console.log("ngAfterContentChecked")}
+    ngAfterContentInit(){console.log("ngAfterContentInit")}
+    ngAfterViewChecked(){console.log("ngAfterViewChecked")}
+    ngAfterViewInit(){console.log("ngAfterViewInit")}
+    ngOnDestroy(){console.log("ngOnDestroy")}
+    ngDoCheck(){console.log("ngDoCheck")}
 
-    
 }
