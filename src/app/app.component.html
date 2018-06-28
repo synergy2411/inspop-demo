@@ -1,7 +1,12 @@
 <div>
-  Component Loaded1
+  Welcome to {{ title }}!
 </div>
 
 <div>
-  <app-user></app-user>
+  <app-user [title]= "title" [user]="user" 
+    (childEvent)="handleEvent($event)">
+    <header>Header Info</header>
+    <main class="section">Main Section</main>
+    <footer>Footer Info</footer>
+  </app-user>
 </div>
