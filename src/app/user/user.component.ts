@@ -30,7 +30,7 @@ DoCheck
 {
 
     @Input('title') title : string;
-    @Input('user') user : User;
+    @Input('users') users : User[];
     @Output('childEvent') childEvent = new EventEmitter<string>();
 
     onKeyup(value : string){
@@ -40,7 +40,7 @@ DoCheck
     moreInfo(user : User){
         alert(`${user.firstName} is working with ${user.company}!!`);
     }
-    constructor(private app  :AppComponent){
+    constructor(){
         console.log("Constructor")}
     ngOnInit(){console.log("ngOnInit")}
     ngOnChanges( changes : SimpleChanges){

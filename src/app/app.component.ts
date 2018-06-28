@@ -14,9 +14,9 @@ export class AppComponent {
     this.title = data;
   }
 
-  user: User ;
+  users: User[] ;
   ngOnInit(){
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
   // constructor(){
   //   this.user = USER_DATA;
