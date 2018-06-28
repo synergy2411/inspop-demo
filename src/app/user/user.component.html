@@ -13,7 +13,7 @@
 
 <div class="container">
 <ul class="list-unstyled">
-<li class="well" *ngFor="let user of users; index as i; first as isFirst; even as isEven">
+<li class="well" *ngFor="let user of users; index as i; first as isFirst; even as isEven; odd as isOdd">
     <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2">
             {{ i }}
@@ -24,8 +24,11 @@
                 (click)="moreInfo(user)">More Info</button>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h1>{{ user.firstName }} {{ user.lastName }}</h1>
-            <p>Date of Birth : {{ user.dob}}</p>
+            <h1 app-highlight>{{ user.firstName }} {{ user.lastName }}</h1>
+            <!-- <p [ngClass]="{'myBorder' : isEven, 'myTransform' : isOdd}">
+                Date of Birth : {{ user.dob}}</p> -->
+            <p [ngClass]="myClasses">
+                Date of Birth : {{ user.dob}}</p>
             <p *ngIf="user.isWorking; else elseTemplate">Income  : {{ user.income }}</p>
             <em class="pull-right">
                 Total Votes : {{ user.vote }}

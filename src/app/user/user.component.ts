@@ -27,7 +27,11 @@ AfterViewChecked,
 AfterViewInit,
 OnDestroy,
 DoCheck     
-{
+{   
+    myClasses = {
+        'myBorder' : true, 
+        'myTransform' : false
+    }
 
     @Input('title') title : string;
     @Input('users') users : User[];
@@ -38,6 +42,8 @@ DoCheck
     }
 
     moreInfo(user : User){
+        this.myClasses.myBorder = false;
+        this.myClasses.myTransform = true;
         alert(`${user.firstName} is working with ${user.company}!!`);
     }
     constructor(){
