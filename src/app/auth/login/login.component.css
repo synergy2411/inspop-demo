@@ -1,0 +1,6 @@
+.ng-invalid.ng-touched[type="text"]{
+    border-bottom : 2px red solid; 
+}
+.ng-valid.ng-touched[type="text"]{
+    border-bottom : 2px green solid; 
+}
