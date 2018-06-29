@@ -2,6 +2,10 @@
   Welcome to {{ title }}!
 </div>
 
+<div class="container">
+  <app-pipe-demo></app-pipe-demo>
+</div>
+
 <div>
   <app-user [title]= "title" [users]="users" 
     (childEvent)="handleEvent($event)">

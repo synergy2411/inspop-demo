@@ -1,4 +1,10 @@
 
+<!-- {{ users | json }} -->
+
+<h2>
+    data : {{ data | async | uppercase }}
+</h2>
+
 <div class="container">
     <input type="text" #childCtrl 
         (keyup)="onKeyup(childCtrl.value)">
@@ -24,17 +30,18 @@
                 (click)="moreInfo(user)">More Info</button>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h1 app-highlight [myColor]="newColor">{{ user.firstName }} {{ user.lastName }}</h1>
+            <h1 app-highlight [myColor]="newColor">
+                {{ user.firstName | uppercase }} {{ user.lastName | uppercase }}</h1>
             <!-- <p [ngClass]="{'myBorder' : isEven, 'myTransform' : isOdd}">
                 Date of Birth : {{ user.dob}}</p> -->
             <p [ngClass]="myClasses">
-                Date of Birth : {{ user.dob}}</p>
+                Date of Birth : {{ user.dob | date : 'MM/dd/yyyy'}}</p>
 
             <!-- <ng-template [ngIf]="user.isWorking">
                 <p></p>
             </ng-template> -->
             <p *appUnless="!user.isWorking">
-                income : : {{ user.income }}
+                income : : {{ user.income | currency : 'INR'}}
             </p>
             <!-- <p *ngIf="user.isWorking; else elseTemplate">Income  : {{ user.income }}</p> -->
             <em class="pull-right">

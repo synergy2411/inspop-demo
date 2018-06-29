@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { CountryCodePipe } from './pipes/countrycode.pipe';
 
 
 @NgModule({
@@ -13,8 +15,11 @@ import { UnlessDirective } from './directives/unless.directive';
     AppComponent,
     UserComponent,
     HighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    PipeDemoComponent,
+    CountryCodePipe
   ],
+
   imports: [
     BrowserModule,
     FormsModule

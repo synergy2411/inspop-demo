@@ -28,6 +28,12 @@ AfterViewInit,
 OnDestroy,
 DoCheck     
 {   
+    
+    data = new Promise((resolve, reject)=>{
+        setTimeout(()=>resolve("Sample Data"), 2000);
+    })
+    
+
     myClasses = {
         'myBorder' : true, 
         'myTransform' : false
