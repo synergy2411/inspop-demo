@@ -1,7 +1,7 @@
-<div>
-  Welcome to {{ title }}!
+<div class="container">
+  Counter in App : {{ dataService.counter }}
+  <button (click)="increase()" class="btn btn-default">Increase</button>
 </div>
-
 
 <div class="container">
   <app-register></app-register>

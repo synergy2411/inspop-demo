@@ -1,6 +1,12 @@
 
 <!-- {{ users | json }} -->
 
+<div class="container">
+Counter in User : {{ dataService.counter }}
+<button (click)="increase()" class="btn btn-default">Increase</button>
+</div>
+
+
 <h2>
     data : {{ data | async | uppercase }}
 </h2>

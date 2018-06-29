@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './model/user.model';
-import { USER_DATA } from './data/mocks';
+import { DataService } from './services/data.service';
+// import { USER_DATA } from './data/mocks';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,13 @@ export class AppComponent {
   }
 
   users: User[] ;
-  ngOnInit(){
-    this.users = USER_DATA;
+  increase(){
+    this.dataService.counter++;
   }
-  // constructor(){
-  //   this.user = USER_DATA;
-  // }
+  ngOnInit(){
+   // this.users = this.dataService.getUserData();
+    this.dataService.getHttpUserData()
+      .subscribe(data=>this.users = data);
+  }
+ constructor(public dataService : DataService){}
 }

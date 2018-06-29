@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   registerForm : FormGroup;
 
   forExclamationMark(input : FormControl){
+    console.log(input);
     const hasExcl = input.value.indexOf('!') >= 0;
     return hasExcl ? null : { 'needExclamation' : true}
   }

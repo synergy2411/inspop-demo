@@ -10,13 +10,15 @@ import { Component, ViewEncapsulation, Input, Output, EventEmitter,
     SimpleChanges} from '@angular/core';
 import { User } from '../model/user.model';
 import { AppComponent } from '../app.component';
+import { DataService } from '../services/data.service';
 
 @Component({
     selector : 'app-user',
     //template : `<h1>User Component Loaded!</h1>`
     templateUrl : './user.component.html',
     styleUrls : ['./user.component.css'],
-    encapsulation : ViewEncapsulation.Emulated
+    encapsulation : ViewEncapsulation.Emulated,
+    providers : [DataService]
 })
 export class UserComponent implements   
 OnInit,
@@ -52,7 +54,10 @@ DoCheck
         this.myClasses.myTransform = true;
         alert(`${user.firstName} is working with ${user.company}!!`);
     }
-    constructor(){
+    increase(){
+        this.dataService.counter++;
+    }
+    constructor(public dataService : DataService){
         console.log("Constructor")}
     ngOnInit(){console.log("ngOnInit")}
     ngOnChanges( changes : SimpleChanges){
