@@ -26,9 +26,9 @@ export class ObsDemoComponent implements OnInit {
       (err)=>{}, 
       ()=>{console.log("Completed!")}
     )
-    
+
     this.numObs = Observable.interval(1000)
-    .subscribe(num=> this.num = num)
+    .subscribe(num=> this.num = num, ()=>{}, ()=>console.log("COMPLETED!"))
   }
 
   ngOnInit() {

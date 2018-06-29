@@ -20,15 +20,16 @@ import { DataService } from '../services/data.service';
     encapsulation : ViewEncapsulation.Emulated,
     providers : [DataService]
 })
-export class UserComponent implements   
-OnInit,
-OnChanges,
-AfterContentChecked,
-AfterContentInit,
-AfterViewChecked,
-AfterViewInit,
-OnDestroy,
-DoCheck     
+export class UserComponent 
+// implements   
+// OnInit,
+// OnChanges,
+// AfterContentChecked,
+// AfterContentInit,
+// AfterViewChecked,
+// AfterViewInit,
+// OnDestroy,
+// DoCheck     
 {   
     
     data = new Promise((resolve, reject)=>{
@@ -59,16 +60,16 @@ DoCheck
     }
     constructor(public dataService : DataService){
         console.log("Constructor")}
-    ngOnInit(){console.log("ngOnInit")}
-    ngOnChanges( changes : SimpleChanges){
-        console.log("ngOnChanges");
-        console.log(changes);
-    }
-    ngAfterContentChecked(){console.log("ngAfterContentChecked")}
-    ngAfterContentInit(){console.log("ngAfterContentInit")}
-    ngAfterViewChecked(){console.log("ngAfterViewChecked")}
-    ngAfterViewInit(){console.log("ngAfterViewInit")}
-    ngOnDestroy(){console.log("ngOnDestroy")}
-    ngDoCheck(){console.log("ngDoCheck")}
+    // ngOnInit(){console.log("ngOnInit")}
+    // ngOnChanges( changes : SimpleChanges){
+    //     console.log("ngOnChanges");
+    //     console.log(changes);
+    // }
+    // ngAfterContentChecked(){console.log("ngAfterContentChecked")}
+    // ngAfterContentInit(){console.log("ngAfterContentInit")}
+    // ngAfterViewChecked(){console.log("ngAfterViewChecked")}
+    // ngAfterViewInit(){console.log("ngAfterViewInit")}
+    // ngOnDestroy(){console.log("ngOnDestroy")}
+    // ngDoCheck(){console.log("ngDoCheck")}
 
 }
