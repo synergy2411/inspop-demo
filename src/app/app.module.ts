@@ -15,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DataService } from './services/data.service';
 import { ObsDemoComponent } from './obs-demo/obs-demo.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { ObsDemoComponent } from './obs-demo/obs-demo.component';
     HttpModule,
     HttpClientModule
   ],
-  providers: [ DataService ],
+  providers: [ DataService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

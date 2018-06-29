@@ -20,4 +20,10 @@ export class DataService{
     getHttpClientUserData(){
        return this.httpClient.get<User[]>("https://inspop-demo.firebaseio.com/userdata.json");
     }
+    postHttpClientData(){
+        this.httpClient.post("https://inspop-demo.firebaseio.com/mydata.json", {
+            body : { name : "Foo"}
+        })
+        .subscribe(response=>console.log(response))
+    }
 }
