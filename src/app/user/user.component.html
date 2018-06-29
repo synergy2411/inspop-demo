@@ -24,7 +24,7 @@
                 (click)="moreInfo(user)">More Info</button>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h1 app-highlight>{{ user.firstName }} {{ user.lastName }}</h1>
+            <h1 app-highlight [myColor]="newColor">{{ user.firstName }} {{ user.lastName }}</h1>
             <!-- <p [ngClass]="{'myBorder' : isEven, 'myTransform' : isOdd}">
                 Date of Birth : {{ user.dob}}</p> -->
             <p [ngClass]="myClasses">

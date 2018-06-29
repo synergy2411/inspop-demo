@@ -36,7 +36,7 @@ DoCheck
     @Input('title') title : string;
     @Input('users') users : User[];
     @Output('childEvent') childEvent = new EventEmitter<string>();
-
+    newColor = 'red';
     onKeyup(value : string){
         this.childEvent.emit(value);
     }
