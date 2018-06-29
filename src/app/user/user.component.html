@@ -29,7 +29,14 @@
                 Date of Birth : {{ user.dob}}</p> -->
             <p [ngClass]="myClasses">
                 Date of Birth : {{ user.dob}}</p>
-            <p *ngIf="user.isWorking; else elseTemplate">Income  : {{ user.income }}</p>
+
+            <!-- <ng-template [ngIf]="user.isWorking">
+                <p></p>
+            </ng-template> -->
+            <p *appUnless="!user.isWorking">
+                income : : {{ user.income }}
+            </p>
+            <!-- <p *ngIf="user.isWorking; else elseTemplate">Income  : {{ user.income }}</p> -->
             <em class="pull-right">
                 Total Votes : {{ user.vote }}
                 <!-- <input type="number" 
