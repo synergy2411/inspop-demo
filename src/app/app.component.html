@@ -2,18 +2,25 @@
   Welcome to {{ title }}!
 </div>
 
+
 <div class="container">
-  <app-login></app-login>
+  <app-register></app-register>
 </div>
+
+<!-- <div class="container">
+  <app-login></app-login>
+</div> -->
+
 <!-- <div class="container">
   <app-pipe-demo></app-pipe-demo>
 </div> -->
 
 <div>
-  <app-user [title]= "title" [users]="users" 
-    (childEvent)="handleEvent($event)">
+  <app-user [title]="title" [users]="users" (childEvent)="handleEvent($event)">
     <header>Header Info</header>
     <main class="section">Main Section</main>
     <footer>Footer Info</footer>
   </app-user>
 </div>
+
+<!-- ng g c auth/register --spec false -->
