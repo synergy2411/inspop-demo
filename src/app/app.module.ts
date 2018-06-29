@@ -13,6 +13,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DataService } from './services/data.service';
+import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DataService } from './services/data.service';
     CountryCodePipe,
     FilterPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ObsDemoComponent
   ],
 
   imports: [
