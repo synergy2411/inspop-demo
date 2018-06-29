@@ -9,6 +9,24 @@ export class PipeDemoComponent implements OnInit {
 
   contact_no : number = 987654321;
 
+  filteredStatus : string="";
+  addTodo(){
+    this.todos.push({label : "New Work", status : 'pending'});
+  }
+  todos = [{
+      label : "Some Work",
+      status : 'done'
+    },{
+      label : "Some Work",
+      status : 'pending'
+    },{
+      label : "Some Work",
+      status : 'done'
+    },{
+      label : "Some Work",
+      status : 'pending'
+    }]
+
   constructor() { }
 
   ngOnInit() {
