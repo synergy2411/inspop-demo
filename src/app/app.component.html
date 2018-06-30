@@ -1,3 +1,18 @@
+
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <li> <a [routerLink]="['login']">Home</a></li>
+    <li> <a href="['register']">Register</a></li>
+    <li> <a [routerLink]="['obsdemo']">Observable Demo</a></li>
+    <li> <a [routerLink]="['pipe']">Pipe Demo</a></li>
+    <li> <a [routerLink]="['user']">Users</a></li>
+  </ul>
+
+</div>
+
+
+<router-outlet></router-outlet>
+
 <!-- <div class="container">
   Counter in App : {{ dataService.counter }}
   <button (click)="increase()" class="btn btn-default">Increase</button>
@@ -6,25 +21,25 @@
 <!-- <div class="container">
   <app-obs-demo></app-obs-demo>
 </div> -->
-
+<!-- 
  <div class="container">
   <app-register></app-register>
 </div>
 
 <div class="container">
   <app-login></app-login>
-</div> 
+</div>  -->
 
 <!-- <div class="container">
   <app-pipe-demo></app-pipe-demo>
 </div> -->
 
-<div>
+<!-- <div>
   <app-user [title]="title" [users]="users" (childEvent)="handleEvent($event)">
     <header>Header Info</header>
     <main class="section">Main Section</main>
     <footer>Footer Info</footer>
   </app-user>
-</div>
+</div> -->
 
 <!-- ng g c auth/register --spec false -->

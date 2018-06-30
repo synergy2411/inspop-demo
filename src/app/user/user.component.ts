@@ -42,12 +42,13 @@ export class UserComponent
         'myTransform' : false
     }
 
-    @Input('title') title : string;
-    @Input('users') users : User[];
-    @Output('childEvent') childEvent = new EventEmitter<string>();
+    htmlSnippets = "<script>alert('Injected Script');</script>"
+    // @Input('title') title : string;
+    // @Input('users') users : User[];
+    // @Output('childEvent') childEvent = new EventEmitter<string>();
     newColor = 'red';
     onKeyup(value : string){
-        this.childEvent.emit(value);
+     //   this.childEvent.emit(value);
     }
 
     moreInfo(user : User){
@@ -71,5 +72,5 @@ export class UserComponent
     // ngAfterViewInit(){console.log("ngAfterViewInit")}
     // ngOnDestroy(){console.log("ngOnDestroy")}
     // ngDoCheck(){console.log("ngDoCheck")}
-
+    }
 }
