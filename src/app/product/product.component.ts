@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,13 +6,14 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent  {
   id : number; 
   name : string;
   page_no : number;
   constructor(private route : ActivatedRoute) { 
     // this.id = this.route.snapshot.params['id'];
     // this.name = this.route.snapshot.params['name'];
+    
     this.route.params.subscribe(params=>{
       this.id = +params['id'];
       this.name = params['name'];
@@ -21,8 +22,4 @@ export class ProductComponent implements OnInit {
       this.page_no = +queryParams['page_no']
     })
   }
-
-  ngOnInit() {
-  }
-
 }
