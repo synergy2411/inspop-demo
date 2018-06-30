@@ -21,12 +21,12 @@ export class AppComponent {
     this.dataService.counter++;
   }
   ngOnInit(){
-   // this.users = this.dataService.getUserData();
+   this.users = this.dataService.getUserData();
     // this.dataService.getHttpUserData()
     //   .subscribe(data=>this.users = data);
-      this.dataService.getHttpClientUserData()
-        .subscribe(data=>this.users = data);
-        this.dataService.postHttpClientData();
+      // this.dataService.getHttpClientUserData()
+      //   .subscribe(data=>this.users = data);
+       //this.dataService.postHttpClientData();
         firebase.initializeApp({
           apiKey: "AIzaSyD2v3bx9kqqn6uW6OTAb-Y8TDhTJGIZdVI",
           authDomain: "inspop-demo.firebaseapp.com"

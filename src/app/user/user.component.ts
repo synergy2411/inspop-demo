@@ -59,7 +59,7 @@ export class UserComponent
         this.dataService.counter++;
     }
     constructor(public dataService : DataService){
-        console.log("Constructor")}
+       // console.log("Constructor")}
     // ngOnInit(){console.log("ngOnInit")}
     // ngOnChanges( changes : SimpleChanges){
     //     console.log("ngOnChanges");
