@@ -2,16 +2,19 @@
 <div class="container">
   <ul class="list-unstyled nav navbar-nav navbar-default">
     <li> <a [routerLink]="['login']">Home</a></li>
-    <li> <a href="['register']">Register</a></li>
+    <li *ngIf="!authService.isAuthenticated()"> <a [routerLink]="['register']">Register</a></li>
     <li> <a [routerLink]="['obsdemo']">Observable Demo</a></li>
     <li> <a [routerLink]="['pipe']">Pipe Demo</a></li>
     <li> <a [routerLink]="['user']">Users</a></li>
+    <li> <a [routerLink]="['product', 5, 'iPhone5' ]" [queryParams]="{'page_no' : 99}">Products</a></li>
   </ul>
 
 </div>
 
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
 
 <!-- <div class="container">
   Counter in App : {{ dataService.counter }}

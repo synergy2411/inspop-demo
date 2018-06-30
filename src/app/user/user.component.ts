@@ -30,8 +30,11 @@ export class UserComponent
 // AfterViewInit,
 // OnDestroy,
 // DoCheck     
-{   
-    
+{   users : User[];
+
+    ngOnInit(){
+        this.users = this.dataService.getUserData();
+    }
     data = new Promise((resolve, reject)=>{
         setTimeout(()=>resolve("Sample Data"), 2000);
     })

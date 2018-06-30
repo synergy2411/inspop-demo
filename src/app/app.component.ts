@@ -3,6 +3,7 @@ import { User } from './model/user.model';
 import { DataService } from './services/data.service';
 // import { USER_DATA } from './data/mocks';
 import * as firebase from 'firebase';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,13 @@ export class AppComponent {
     this.title = data;
   }
 
+  login : string = 'login';
   users: User[] ;
   increase(){
     this.dataService.counter++;
   }
   ngOnInit(){
-   this.users = this.dataService.getUserData();
+   //this.users = this.dataService.getUserData();
     // this.dataService.getHttpUserData()
     //   .subscribe(data=>this.users = data);
       // this.dataService.getHttpClientUserData()
@@ -32,7 +34,8 @@ export class AppComponent {
           authDomain: "inspop-demo.firebaseapp.com"
         });
   }
- constructor(public dataService : DataService){}
+ constructor(public dataService : DataService,
+          public authService : AuthService){}
 }
 
 // npm cache clean --force

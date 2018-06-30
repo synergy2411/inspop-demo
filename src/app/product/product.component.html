@@ -1,0 +1,16 @@
+
+<div class="container">
+  <ul class="list-styled">
+    <li><a [routerLink]="['overview', id]">Overview</a></li>
+    <li><a [routerLink]="['spec', name]">Specification</a></li>
+  </ul>
+
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="container">
+  Showing the Product with ID #{{ id }} named {{ name }}!!
+  Page Number : {{ page_no }}
+</div>
+
